@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Agent Value Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+    <script type="module" crossorigin src="/nws-demo/assets/dashboard-G0-IFOfT.js"></script>
+    <link rel="modulepreload" crossorigin href="/nws-demo/assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="stylesheet" crossorigin href="/nws-demo/assets/dashboard-BCvqqAU6.css">
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <h1>AI Agent Value Dashboard</h1>
+        <p class="subtitle">Economic impact of AI-powered business automation</p>
+      </header>
+
+      <main>
+        <div id="total-section">
+          <div class="total-value" id="total-value">$0</div>
+          <div class="total-label">Total Economic Value Delivered</div>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="chart-card">
+            <div class="chart-container">
+              <canvas id="value-chart"></canvas>
+            </div>
+            <p class="chart-hint">Click any segment to see market rate details</p>
+          </div>
+
+          <div class="inputs-card">
+            <h3>Outcomes Completed</h3>
+            <div class="scenario-inputs" id="scenario-inputs"></div>
+          </div>
+        </div>
+
+        <div id="detail-panel" class="detail-panel"></div>
+      </main>
+
+      <footer>
+        <p>Values validated against current freelance market rates</p>
+      </footer>
+    </div>
+
+  </body>
+</html>
