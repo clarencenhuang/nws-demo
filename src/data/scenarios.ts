@@ -1,10 +1,13 @@
+export interface SamplePosting {
+  rate: number;
+  text: string;
+}
+
 export interface UpworkRateData {
   jobTitle: string;
-  hourlyRateLow: number;
-  hourlyRateHigh: number;
   estimatedHours: number;
   perUnitValue: number;
-  samplePostings: string[];
+  samplePostings: SamplePosting[];
 }
 
 export interface Scenario {
@@ -28,14 +31,12 @@ export const SCENARIOS: Scenario[] = [
     deliverable: 'Invoice Created & Sent',
     upwork: {
       jobTitle: 'Bookkeeper / AR Specialist',
-      hourlyRateLow: 45,
-      hourlyRateHigh: 75,
       estimatedHours: 1.5,
       perUnitValue: 90,
       samplePostings: [
-        'Looking for a detail-oriented bookkeeper to prepare and send invoices for a landscaping/snow removal company. Must be proficient in QuickBooks Online. Responsibilities include entering job details, applying correct pricing, and emailing invoices to customers. Budget: $75-$120 per batch.',
-        'AR specialist needed to manage invoicing for a growing field services company. You will review completed work orders, create invoices in QBO, and follow up on outstanding balances. $45-$75/hr depending on experience.',
-        'Part-time bookkeeper for small commercial services business. Weekly invoicing of 10-20 customers, payment application, and light collections follow-up. QuickBooks Online experience required.',
+        { rate: 55, text: 'Looking for a detail-oriented bookkeeper to prepare and send invoices for a landscaping/snow removal company. Must be proficient in QuickBooks Online. Responsibilities include entering job details, applying correct pricing, and emailing invoices to customers.' },
+        { rate: 65, text: 'AR specialist needed to manage invoicing for a growing field services company. You will review completed work orders, create invoices in QBO, and follow up on outstanding balances.' },
+        { rate: 50, text: 'Part-time bookkeeper for small commercial services business. Weekly invoicing of 10-20 customers, payment application, and light collections follow-up. QuickBooks Online experience required.' },
       ],
     },
     color: '#0ea5e9',
@@ -50,14 +51,12 @@ export const SCENARIOS: Scenario[] = [
     deliverable: 'Deductible Analysis Report',
     upwork: {
       jobTitle: 'Insurance Risk Analyst',
-      hourlyRateLow: 85,
-      hourlyRateHigh: 150,
       estimatedHours: 12,
       perUnitValue: 1410,
       samplePostings: [
-        'Seeking insurance risk analyst to review commercial fleet policies for a snow removal and landscaping company. Must analyze deductible options against 3 years of maintenance records and produce a break-even recommendation report. Budget: $1,200-$1,800.',
-        'Need a commercial insurance consultant to evaluate renewal quotes for a mid-size field services operation. Deliverable is a written analysis comparing premium/deductible tiers with historical claim and repair data. $85-$150/hr.',
-        'Insurance analytics project: Compare 4 deductible tiers against actual equipment failure rates for a 15-vehicle fleet. Must pull financial data, calculate expected annual costs per tier, and present findings in a professional report.',
+        { rate: 125, text: 'Seeking insurance risk analyst to review commercial fleet policies for a snow removal and landscaping company. Must analyze deductible options against 3 years of maintenance records and produce a break-even recommendation report.' },
+        { rate: 110, text: 'Need a commercial insurance consultant to evaluate renewal quotes for a mid-size field services operation. Deliverable is a written analysis comparing premium/deductible tiers with historical claim and repair data.' },
+        { rate: 140, text: 'Insurance analytics project: Compare 4 deductible tiers against actual equipment failure rates for a 15-vehicle fleet. Must pull financial data, calculate expected annual costs per tier, and present findings in a professional report.' },
       ],
     },
     color: '#2563eb',
@@ -72,14 +71,12 @@ export const SCENARIOS: Scenario[] = [
     deliverable: 'Bulk Negotiation Letter',
     upwork: {
       jobTitle: 'Procurement Specialist',
-      hourlyRateLow: 75,
-      hourlyRateHigh: 125,
       estimatedHours: 8,
       perUnitValue: 800,
       samplePostings: [
-        'Need procurement specialist experienced in bulk material negotiation for commercial snow removal operations. Must analyze weather forecasting data and historical usage to draft a fixed-price supply contract. Budget: $600-$1,000.',
-        'Supply chain consultant for seasonal materials purchasing. Will review 3 years of salt/brine purchase history, analyze NOAA winter outlook, and negotiate pre-season pricing with vendors. $75-$125/hr.',
-        'Looking for someone to help lock in salt and de-icing material prices before winter season. Must draft professional vendor negotiation letters backed by data analysis. Quick turnaround needed.',
+        { rate: 95, text: 'Need procurement specialist experienced in bulk material negotiation for commercial snow removal operations. Must analyze weather forecasting data and historical usage to draft a fixed-price supply contract.' },
+        { rate: 85, text: 'Supply chain consultant for seasonal materials purchasing. Will review 3 years of salt/brine purchase history, analyze NOAA winter outlook, and negotiate pre-season pricing with vendors.' },
+        { rate: 110, text: 'Looking for someone to help lock in salt and de-icing material prices before winter season. Must draft professional vendor negotiation letters backed by data analysis. Quick turnaround needed.' },
       ],
     },
     color: '#059669',
@@ -94,14 +91,12 @@ export const SCENARIOS: Scenario[] = [
     deliverable: 'Retire vs. Repair Executive Summary',
     upwork: {
       jobTitle: 'Fleet Management Consultant',
-      hourlyRateLow: 95,
-      hourlyRateHigh: 160,
       estimatedHours: 16,
       perUnitValue: 2040,
       samplePostings: [
-        'Fleet management consultant needed for a 15-vehicle commercial fleet. Must analyze maintenance records, calculate total cost of ownership, and produce retire-vs-repair recommendations for aging equipment. $95-$160/hr.',
-        'Looking for an experienced fleet analyst to evaluate our 2018 F-550 fleet. Need lifetime cost analysis, Blue Book comparisons, and a professional recommendation report with replacement options. Budget: $1,800-$2,500.',
-        'Vehicle lifecycle consultant for a landscaping and snow removal company. Analyze QuickBooks maintenance data against vehicle valuations and produce executive summaries for capital planning decisions.',
+        { rate: 120, text: 'Fleet management consultant needed for a 15-vehicle commercial fleet. Must analyze maintenance records, calculate total cost of ownership, and produce retire-vs-repair recommendations for aging equipment.' },
+        { rate: 145, text: 'Looking for an experienced fleet analyst to evaluate our 2018 F-550 fleet. Need lifetime cost analysis, Blue Book comparisons, and a professional recommendation report with replacement options.' },
+        { rate: 130, text: 'Vehicle lifecycle consultant for a landscaping and snow removal company. Analyze QuickBooks maintenance data against vehicle valuations and produce executive summaries for capital planning decisions.' },
       ],
     },
     color: '#d97706',
@@ -116,14 +111,12 @@ export const SCENARIOS: Scenario[] = [
     deliverable: 'OSHA Compliance Alert Package',
     upwork: {
       jobTitle: 'Occupational Safety Consultant',
-      hourlyRateLow: 120,
-      hourlyRateHigh: 200,
       estimatedHours: 6,
       perUnitValue: 960,
       samplePostings: [
-        'OSHA compliance consultant needed for outdoor field services company. Must create cold weather safety protocols, warm-up schedules, and documentation templates that satisfy the General Duty Clause. $120-$200/hr.',
-        'Seeking safety compliance specialist to build a weather-triggered alert system and crew safety documentation package. Must understand OSHA cold stress regulations and create audit-ready checklists. Budget: $800-$1,200.',
-        'Need an occupational safety expert to review our cold weather operations procedures. Deliverables include a compliance alert template, supervisor acknowledgment forms, and a legal risk assessment memo.',
+        { rate: 150, text: 'OSHA compliance consultant needed for outdoor field services company. Must create cold weather safety protocols, warm-up schedules, and documentation templates that satisfy the General Duty Clause.' },
+        { rate: 175, text: 'Seeking safety compliance specialist to build a weather-triggered alert system and crew safety documentation package. Must understand OSHA cold stress regulations and create audit-ready checklists.' },
+        { rate: 160, text: 'Need an occupational safety expert to review our cold weather operations procedures. Deliverables include a compliance alert template, supervisor acknowledgment forms, and a legal risk assessment memo.' },
       ],
     },
     color: '#dc2626',
@@ -138,14 +131,12 @@ export const SCENARIOS: Scenario[] = [
     deliverable: '12-Slide Financial Review Presentation',
     upwork: {
       jobTitle: 'Financial Analyst / CFO Services',
-      hourlyRateLow: 100,
-      hourlyRateHigh: 175,
       estimatedHours: 20,
       perUnitValue: 2750,
       samplePostings: [
-        'Financial analyst needed to create a board-ready investor presentation. Must pull 24 months of P&L and balance sheet data, perform trend analysis, and build a 12-slide deck with professional charts. $100-$175/hr.',
-        'CFO-level consultant for quarterly investor update. Need YoY growth analysis, EBITDA margin calculations, and a polished PowerPoint deck with financial visualizations. Budget: $2,500-$3,500.',
-        'Seeking experienced financial consultant to prepare an investor trajectory presentation for a growing field services company. Must analyze historical financials and project 2-year growth roadmap.',
+        { rate: 135, text: 'Financial analyst needed to create a board-ready investor presentation. Must pull 24 months of P&L and balance sheet data, perform trend analysis, and build a 12-slide deck with professional charts.' },
+        { rate: 165, text: 'CFO-level consultant for quarterly investor update. Need YoY growth analysis, EBITDA margin calculations, and a polished PowerPoint deck with financial visualizations.' },
+        { rate: 150, text: 'Seeking experienced financial consultant to prepare an investor trajectory presentation for a growing field services company. Must analyze historical financials and project 2-year growth roadmap.' },
       ],
     },
     color: '#7c3aed',

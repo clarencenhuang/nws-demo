@@ -145,10 +145,10 @@ function showDetailPanel(scenario: Scenario, count: number): void {
           <h4>${scenario.upwork.jobTitle}</h4>
         </div>
         <div class="rate-badges">
-          <span class="rate-badge">$${scenario.upwork.hourlyRateLow} - $${scenario.upwork.hourlyRateHigh}/hr</span>
+          <span class="rate-badge">$${posting.rate}/hr</span>
           <span class="rate-badge">~${scenario.upwork.estimatedHours}h per deliverable</span>
         </div>
-        <p>${posting}</p>
+        <p>${posting.text}</p>
       </div>
     `
     )
