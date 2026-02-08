@@ -1,6 +1,7 @@
 import './dashboard.css';
 import {
   SCENARIOS,
+  MockLink,
   calculateSliceValue,
   calculateTotalValue,
   formatCurrency,
@@ -139,7 +140,7 @@ function showDetailPanel(scenario: Scenario, count: number): void {
   const postingsHtml = scenario.upwork.samplePostings
     .map(
       (posting) => `
-      <div class="upwork-card">
+      <a class="upwork-card" href="${MockLink}" target="_blank" rel="noopener noreferrer">
         <div class="upwork-card-header">
           <span class="upwork-logo">Upwork</span>
           <h4>${scenario.upwork.jobTitle}</h4>
@@ -149,7 +150,7 @@ function showDetailPanel(scenario: Scenario, count: number): void {
           <span class="rate-badge">~${scenario.upwork.estimatedHours}h per deliverable</span>
         </div>
         <p>${posting.text}</p>
-      </div>
+      </a>
     `
     )
     .join('');
