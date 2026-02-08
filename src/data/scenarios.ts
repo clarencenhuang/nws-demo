@@ -21,6 +21,8 @@ export interface Scenario {
   defaultCount: number;
 }
 
+export const MockLink = "https://www.upwork.com/nx/search/talent/details/~019b179581d29224f2/profile?nbs=1&top_rated_plus=yes&top_rated_status=top_rated&q=Fleet%20Management%20Consultant&pageTitle=Profile&_modalInfo=%5B%7B%22navType%22%3A%22slider%22,%22title%22%3A%22Profile%22,%22modalId%22%3A%221770591445897%22%7D%5D&nav_dir=pop";
+
 export const SCENARIOS: Scenario[] = [
   {
     id: 'invoicing',
